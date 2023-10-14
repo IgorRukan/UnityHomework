@@ -11,7 +11,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/241ca07620644274b99c2f9d1288d0ab14f418/ee/6e437d8e/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24a24a1a41ed4f1db395556cd9559f1d21c18/5c/961da2bb/Physics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/2e/11d6a942/Single.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ammo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boom.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tennis.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -85,6 +90,13 @@
       <workItem from="1696608721400" duration="20195000" />
       <workItem from="1696633411964" duration="5843000" />
       <workItem from="1696666531603" duration="928000" />
+      <workItem from="1696937073660" duration="5057000" />
+      <workItem from="1696953559025" duration="7391000" />
+      <workItem from="1696962629454" duration="978000" />
+      <workItem from="1697041040920" duration="8093000" />
+      <workItem from="1697120016583" duration="6431000" />
+      <workItem from="1697131053115" duration="922000" />
+      <workItem from="1697282431610" duration="4798000" />
     </task>
     <servers />
   </component>
@@ -92,5 +104,114 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="com.github.evgenys91.machinet.common.dslhistory.DslHistoryState">
+    <option name="historyDtoById">
+      <map>
+        <entry key="66ffef">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
+                </list>
+              </option>
+              <option name="id" value="66ffef" />
+              <option name="initiateTms" value="1697130012130" />
+              <option name="request" value="c# var" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="В C#, ключевое слово `var` используется для объявления переменной без явного указания ее типа. Компилятор C# автоматически определит тип переменной на основе выражения, которое ей присваивается.&#10;&#10;Вот несколько примеров использования `var`:&#10;&#10;```csharp&#10;var number = 10; // number будет иметь тип int&#10;var name = &quot;John&quot;; // name будет иметь тип string&#10;var pi = 3.14f; // pi будет иметь тип float&#10;var player = new Player(); // player будет иметь тип Player (если Player - это класс)&#10;```&#10;&#10;Компилятор C# определит тип переменной `var` на основе выражения, которое ей присваивается. Важно отметить, что тип переменной `var` определяется во время компиляции, а не во время выполнения. Это означает, что тип переменной `var` должен быть известен компилятору во время компиляции.&#10;&#10;Использование `var` может сделать код более компактным и улучшить его читаемость, особенно когда тип переменной очевиден из контекста. Однако, следует быть осторожным при использовании `var`, чтобы не создавать путаницу или неясность в коде." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1697130021832" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="a5f916">
+          <value>
+            <ChatHistoryModel>
+              <option name="id" value="a5f916" />
+              <option name="initiateTms" value="1697128285496" />
+              <option name="request" value="как узнать на каком префабе висит скрипт в коде в Гтшен" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="В Unity можно узнать, на каком префабе висит скрипт, используя метод `PrefabUtility.GetPrefabInstanceHandle` из класса `UnityEditor.PrefabUtility`. Однако, этот метод доступен только в редакторе Unity и не будет работать во время выполнения игры.&#10;&#10;Вот пример кода, который позволяет узнать, на каком префабе висит скрипт в редакторе Unity:&#10;&#10;```csharp&#10;using UnityEditor;&#10;using UnityEngine;&#10;&#10;public class ScriptPrefabChecker : MonoBehaviour&#10;{&#10;    [MenuItem(&quot;Custom/Check Prefab&quot;)]&#10;    private static void CheckPrefab()&#10;    {&#10;        GameObject selectedObject = Selection.activeGameObject;&#10;        if (selectedObject != null)&#10;        {&#10;            GameObject prefab = PrefabUtility.GetPrefabInstanceHandle(selectedObject);&#10;            if (prefab != null)&#10;            {&#10;                Debug.Log(&quot;The script is attached to the prefab: &quot; + prefab.name);&#10;            }&#10;            else&#10;            {&#10;                Debug.Log(&quot;The script is not attached to any prefab.&quot;);&#10;            }&#10;        }&#10;        else&#10;        {&#10;            Debug.Log(&quot;No object selected.&quot;);&#10;        }&#10;    }&#10;}&#10;```&#10;&#10;Чтобы использовать этот код, следуйте этим шагам:&#10;&#10;1. Создайте новый скрипт в Unity и назовите его, например, `ScriptPrefabChecker`.&#10;2. Скопируйте приведенный выше код в созданный скрипт.&#10;3. Откройте редактор Unity и выберите объект, на котором находится скрипт, который вы хотите проверить.&#10;4. Нажмите правой кнопкой мыши на сцене или в иерархии объектов и выберите &quot;Custom&quot; -&gt; &quot;Check Prefab&quot; из контекстного меню.&#10;5. В консоли Unity вы увидите сообщение, указывающее, на каком префабе находится скрипт, или сообщение, что скрипт не прикреплен к префабу.&#10;&#10;Обратите внимание, что этот код работает только в редакторе Unity и не будет работать во время выполнения игры." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1697128291682" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Shoot.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="ab3280">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Shoot.cs" />
+                </list>
+              </option>
+              <option name="id" value="ab3280" />
+              <option name="initiateTms" value="1697127883608" />
+              <option name="request" value="Unity пример ООп" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Конечно! Вот пример кода, демонстрирующий применение принципов объектно-ориентированного программирования (ООП) в Unity:&#10;&#10;```csharp&#10;using UnityEngine;&#10;&#10;// Базовый класс для всех игровых объектов&#10;public class GameObjectBase : MonoBehaviour&#10;{&#10;    public string objectName;&#10;    public int health;&#10;&#10;    public virtual void Start()&#10;    {&#10;        Debug.Log(&quot;Object &quot; + objectName + &quot; has been created.&quot;);&#10;    }&#10;&#10;    public virtual void Update()&#10;    {&#10;        // Общая логика обновления для всех игровых объектов&#10;    }&#10;&#10;    public virtual void TakeDamage(int damage)&#10;    {&#10;        health -= damage;&#10;        if (health &lt;= 0)&#10;        {&#10;            Destroy(gameObject);&#10;        }&#10;    }&#10;}&#10;&#10;// Класс для игрового персонажа&#10;public class Character : GameObjectBase&#10;{&#10;    public int attackDamage;&#10;&#10;    public override void Start()&#10;    {&#10;        base.Start();&#10;        Debug.Log(&quot;Character &quot; + objectName + &quot; has been created.&quot;);&#10;    }&#10;&#10;    public override void Update()&#10;    {&#10;        base.Update();&#10;        // Логика обновления для персонажа&#10;    }&#10;&#10;    public override void TakeDamage(int damage)&#10;    {&#10;        base.TakeDamage(damage);&#10;        Debug.Log(&quot;Character &quot; + objectName + &quot; took &quot; + damage + &quot; damage.&quot;);&#10;    }&#10;&#10;    public void Attack(GameObjectBase target)&#10;    {&#10;        target.TakeDamage(attackDamage);&#10;        Debug.Log(&quot;Character &quot; + objectName + &quot; attacked &quot; + target.objectName + &quot; for &quot; + attackDamage + &quot; damage.&quot;);&#10;    }&#10;}&#10;&#10;// Класс для врага&#10;public class Enemy : GameObjectBase&#10;{&#10;    public override void Start()&#10;    {&#10;        base.Start();&#10;        Debug.Log(&quot;Enemy &quot; + objectName + &quot; has been created.&quot;);&#10;    }&#10;&#10;    public override void Update()&#10;    {&#10;        base.Update();&#10;        // Логика обновления для врага&#10;    }&#10;&#10;    public override void TakeDamage(int damage)&#10;    {&#10;        base.TakeDamage(damage);&#10;        Debug.Log(&quot;Enemy &quot; + objectName + &quot; took &quot; + damage + &quot; damage.&quot;);&#10;    }&#10;}&#10;&#10;// Пример использования классов&#10;public class Game : MonoBehaviour&#10;{&#10;    public Character player;&#10;    public Enemy enemy;&#10;&#10;    private void Start()&#10;    {&#10;        player.Start();&#10;        enemy.Start();&#10;    }&#10;&#10;    private void Update()&#10;    {&#10;        player.Update();&#10;        enemy.Update();&#10;&#10;        if (Input.GetKeyDown(KeyCode.Space))&#10;        {&#10;            player.Attack(enemy);&#10;        }&#10;    }&#10;}&#10;```&#10;&#10;В этом примере есть базовый класс `GameObjectBase`, который содержит общие свойства и методы для всех игровых объектов. Затем есть классы `Character` и `Enemy`, которые наследуются от `GameObjectBase` и добавляют свои собственные свойства и методы.&#10;&#10;Класс `Character` имеет дополнительное свойство `attackDamage` и метод `Attack()`, который позволяет персонажу атаковать другой игровой объект. Класс `Enemy` переопределяет метод `TakeDamage()`, чтобы добавить дополнительную логику для врагов.&#10;&#10;В классе `Game` происходит использование созданных классов. В методе `Update()` происходит обновление игровых объектов, а при нажатии на пробел персонаж атакует врага.&#10;&#10;Это простой пример, но он демонстрирует основные принципы ООП в Unity. Вы можете расширять и дополнять этот код в соответствии с вашими потребностями и требованиями вашей игры." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1697127901512" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Shoot.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="cd7e97">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
+                </list>
+              </option>
+              <option name="id" value="cd7e97" />
+              <option name="initiateTms" value="1697127172314" />
+              <option name="request" value="как работает наследование в Unity" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="В Unity наследование работает так же, как и в любой другой объектно-ориентированной системе. Вы можете создавать классы-наследники, которые наследуют свойства и методы от базового класса.&#10;&#10;В Unity наследование часто используется для создания различных компонентов игровых объектов. Например, у вас может быть базовый класс &quot;Enemy&quot; с общими свойствами и методами для всех врагов в игре. Затем вы можете создать классы-наследники, такие как &quot;Zombie&quot; и &quot;Robot&quot;, которые наследуются от базового класса &quot;Enemy&quot; и добавляют свои собственные уникальные свойства и методы.&#10;&#10;Вот пример кода, демонстрирующий наследование в Unity:&#10;&#10;```csharp&#10;public class Enemy : MonoBehaviour&#10;{&#10;    public int health;&#10;    &#10;    public virtual void Attack()&#10;    {&#10;        Debug.Log(&quot;Enemy attacks!&quot;);&#10;    }&#10;}&#10;&#10;public class Zombie : Enemy&#10;{&#10;    public override void Attack()&#10;    {&#10;        base.Attack();&#10;        Debug.Log(&quot;Zombie bites!&quot;);&#10;    }&#10;}&#10;&#10;public class Robot : Enemy&#10;{&#10;    public override void Attack()&#10;    {&#10;        base.Attack();&#10;        Debug.Log(&quot;Robot shoots!&quot;);&#10;    }&#10;}&#10;```&#10;&#10;В этом примере класс &quot;Zombie&quot; и &quot;Robot&quot; наследуются от базового класса &quot;Enemy&quot;. Оба класса-наследника переопределяют метод &quot;Attack()&quot;, добавляя свои собственные действия. Вы можете создать экземпляры этих классов и вызвать метод &quot;Attack()&quot;, чтобы увидеть различное поведение для каждого типа врага.&#10;&#10;Наследование позволяет создавать иерархию классов, что упрощает организацию кода и повторное использование функциональности." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1697127179436" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="greeting">
+          <value>
+            <ChatHistoryModel>
+              <option name="id" value="greeting" />
+              <option name="initiateTms" value="1697127158681" />
+              <option name="request" value="" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="&#10;Hello, I am Machinet AI - context aware chat, which can help you with your daily programming routine. How can I help?" />
+              <option name="responseTms" value="1697127160491" />
+            </ChatHistoryModel>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

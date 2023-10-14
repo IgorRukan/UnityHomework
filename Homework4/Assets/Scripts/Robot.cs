@@ -12,10 +12,13 @@ public class Robot : MonoBehaviour
     private Rigidbody body;
 
     public GameObject[] bullet;
-
+    public Projectile[] projectile;
+    
     public int current = 0;
     
     public Transform spawnBullet;
+
+    public Vector3 [] vievPort;
     
     private void Start()
     {
@@ -35,6 +38,7 @@ public class Robot : MonoBehaviour
         {
             body.velocity = body.transform.forward * forwardForce;
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)

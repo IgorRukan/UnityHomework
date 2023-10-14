@@ -1,52 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tennis : MonoBehaviour
+public class Tennis : Projectile
 {
-    
     public float shootForce;
     public float speed;
+    public float bounceTime;
+    public float bounceTimeLength = 5f;
 
-    void Update()
+    private void Start()
     {
-        transform.Translate(0,0,speed*Time.deltaTime);
+        bounceTimeLength *= 2;
     }
 
 
-    public GameObject TennisShooting(Camera viewCamera,Robot robot)
+    public void Shoot(GameObject currentBullet, Vector3 dirWithoutSpread)
     {
         Debug.Log("tenis");
-        Ray ray = viewCamera.ViewportPointToRay(new Vector3(0.5f, 0.9f, 0));
-        RaycastHit hit;
-
-        Vector3 targetPoint;
-        if (Physics.Raycast(ray, out hit))
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            targetPoint = ray.GetPoint(100f);
-        }
-
-        var position = robot.spawnBullet.position;
-        Vector3 dirWithoutSpread = (targetPoint - position);
-
-        GameObject currentBullet = Instantiate(robot.bullet[robot.current], position, Quaternion.identity);
-
-        currentBullet.transform.forward = dirWithoutSpread.normalized;
 
         currentBullet.GetComponent<Rigidbody>().AddForce(dirWithoutSpread.normalized * shootForce, ForceMode.Force);
 
-        return currentBullet;
+        bounceTime = 0;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        // if (other.name.Contains("Wall"))
-        // {
-        //     Destroy(this.gameObject);   
-        // }
+        bounceTime++;
+        if (bounceTime >= bounceTimeLength)
+        {
+            Destroy(gameObject);
+        }
     }
 }

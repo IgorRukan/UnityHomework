@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Shoot : MonoBehaviour
 {
@@ -11,10 +7,6 @@ public class Shoot : MonoBehaviour
     public Grenade grenade;
 
     public Bullet bullet;
-    public Tennis tennis;
-
-    public float shootForce;
-    private GameObject currentBullet;
 
     void Update()
     {
@@ -26,44 +18,29 @@ public class Shoot : MonoBehaviour
 
     private void Shooting()
     {
-        if (robot.bullet[robot.current].name.Equals(bullet.name))
-        {
-            currentBullet = bullet.BulletShooting(viewCamera, robot);
-        }
-        if (robot.bullet[robot.current].name.Equals(tennis.name))
-        {
-            currentBullet = tennis.TennisShooting(viewCamera, robot);
-        }
-        if(robot.bullet[robot.current].name.Equals(grenade.name))
-        {
-            currentBullet = grenade.GrenadeShooting(viewCamera, robot);
-            StartCoroutine(Caboom());
-            StartCoroutine(Clean());
-        }
-        
-        StartCoroutine(DeleteBullet());
-    }
+        Ray ray = viewCamera.ViewportPointToRay(robot.vievPort[robot.current]);
+        RaycastHit hit;
 
-    IEnumerator Clean()
-    {
-        int i = 0;
-        yield return new WaitForSeconds(3f);
-        while (grenade.boom.piecesList.Length != i)
+        Vector3 targetPoint; 
+        if (Physics.Raycast(ray, out hit))
         {
-            Destroy(grenade.boom.piecesList[i]);
-            i++;
+            targetPoint = hit.point;
         }
-    }
-    public IEnumerator Caboom()
-    {
-        Debug.Log("Boom");
-        yield return new WaitForSeconds(1f);
-        grenade.boom.Explosion(currentBullet);
-        Destroy(currentBullet);
-    }
-    IEnumerator DeleteBullet()
-    {
-        yield return new WaitForSeconds(5f);
-        Destroy(currentBullet);
+        else
+        {
+            targetPoint = ray.GetPoint(100f);
+        }
+
+        var position = robot.spawnBullet.position;
+        Vector3 dirWithoutSpread = (targetPoint - position);
+
+        var projectile = robot.projectile[robot.current].bullet;
+        GameObject currentBullet = Instantiate(robot.bullet[robot.current], position, Quaternion.identity);
+        currentBullet.transform.forward = dirWithoutSpread.normalized;
+        projectile.Shoot(currentBullet,dirWithoutSpread);
+        
+        // curBul.grenade.Shoot(currentBullet,dirWithoutSpread);
+        // curBul.bullet.Shoot(currentBullet,dirWithoutSpread);
+        // curBul.tennis.Shoot(currentBullet,dirWithoutSpread);
     }
 }

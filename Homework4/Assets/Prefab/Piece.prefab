@@ -132,7 +132,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &-5678882083057341810
 MonoBehaviour:
@@ -146,6 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dca5ab176d00d4b984c66f443bce2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 7107730045122636560}
+  explosionForce: 300
+  explosionSpeed: 10
+  numberOfPieces: 20
   piecesList:
   - {fileID: 0}
   - {fileID: 0}
@@ -153,7 +157,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  prefab: {fileID: 7107730045122636560}
-  explosionForce: 200
-  explosionSpeed: 10
-  explosionPoint: {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
