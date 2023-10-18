@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Grenade : Projectile
+public class Grenade : MonoBehaviour
 {
     public float shootForce;
     public Boom boom;

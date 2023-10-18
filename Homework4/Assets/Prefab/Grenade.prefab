@@ -178,6 +178,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3482ec9c266e6834bb9f9a919144c1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootForce: 5
-  speed: 10
+  shootForce: 15
   boom: {fileID: -5678882083057341810, guid: eed06d8b5fba7ca44b8d3a09359acaa2, type: 3}

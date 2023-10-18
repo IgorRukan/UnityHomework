@@ -4,9 +4,7 @@ public class Shoot : MonoBehaviour
 {
     public Camera viewCamera;
     public Robot robot;
-    public Grenade grenade;
 
-    public Bullet bullet;
 
     void Update()
     {
@@ -16,6 +14,7 @@ public class Shoot : MonoBehaviour
         }
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     private void Shooting()
     {
         Ray ray = viewCamera.ViewportPointToRay(robot.vievPort[robot.current]);
@@ -34,13 +33,30 @@ public class Shoot : MonoBehaviour
         var position = robot.spawnBullet.position;
         Vector3 dirWithoutSpread = (targetPoint - position);
 
-        var projectile = robot.projectile[robot.current].bullet;
-        GameObject currentBullet = Instantiate(robot.bullet[robot.current], position, Quaternion.identity);
+        var bullet = robot.bullets[robot.current];
+        GameObject currentBullet = Instantiate(bullet.gameObject, position, Quaternion.identity);
         currentBullet.transform.forward = dirWithoutSpread.normalized;
-        projectile.Shoot(currentBullet,dirWithoutSpread);
-        
-        // curBul.grenade.Shoot(currentBullet,dirWithoutSpread);
-        // curBul.bullet.Shoot(currentBullet,dirWithoutSpread);
-        // curBul.tennis.Shoot(currentBullet,dirWithoutSpread);
+        switch (robot.current)
+        {
+            case 0:
+            {
+                bullet.GetComponent<Bullet>().Shoot(currentBullet,dirWithoutSpread);
+                return;
+            }
+            case 1:
+            {
+                bullet.GetComponent<Grenade>().Shoot(currentBullet,dirWithoutSpread);
+                return;
+            }
+            case 2:
+            {
+                bullet.GetComponent<Tennis>().Shoot(currentBullet,dirWithoutSpread);
+                return;
+            }
+            default:
+            {
+                return;
+            }
+        }
     }
 }

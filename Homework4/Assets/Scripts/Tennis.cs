@@ -3,10 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tennis : Projectile
+public class Tennis : MonoBehaviour
 {
     public float shootForce;
-    public float speed;
     public float bounceTime;
     public float bounceTimeLength = 5f;
 
@@ -20,7 +19,7 @@ public class Tennis : Projectile
     {
         Debug.Log("tenis");
 
-        currentBullet.GetComponent<Rigidbody>().AddForce(dirWithoutSpread.normalized * shootForce, ForceMode.Force);
+        currentBullet.GetComponent<Rigidbody>().AddForce(dirWithoutSpread.normalized * shootForce, ForceMode.Impulse);
 
         bounceTime = 0;
     }

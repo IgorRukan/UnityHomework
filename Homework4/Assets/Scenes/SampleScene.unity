@@ -254,7 +254,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108878004}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1ca314e1e7e127e4ea6564fbe23e3561, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -564,7 +564,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560725430}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1ca314e1e7e127e4ea6564fbe23e3561, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -674,7 +674,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599156821}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1ca314e1e7e127e4ea6564fbe23e3561, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2018,7 +2018,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126109066}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1ca314e1e7e127e4ea6564fbe23e3561, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2736,10 +2736,11 @@ MonoBehaviour:
   - {fileID: 8194658408374266339, guid: 6d58357bbb1b79147b238b05bca33271, type: 3}
   - {fileID: 7817277117043097757, guid: b0e9445a690b85846b1dd8cd6c793d28, type: 3}
   - {fileID: 2678732584896180867, guid: 55c5c7e1e4543c0469d9d2381799e31e, type: 3}
-  projectile:
-  - {fileID: 2137383495}
-  - {fileID: 739636481}
-  - {fileID: 1503878845}
+  projectile: []
+  bullets:
+  - {fileID: -7603444813830743608, guid: 6d58357bbb1b79147b238b05bca33271, type: 3}
+  - {fileID: -716991774574899656, guid: b0e9445a690b85846b1dd8cd6c793d28, type: 3}
+  - {fileID: 3012369083214324128, guid: 55c5c7e1e4543c0469d9d2381799e31e, type: 3}
   current: 0
   spawnBullet: {fileID: 2068973296}
   vievPort:
@@ -3104,7 +3105,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033005381}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1ca314e1e7e127e4ea6564fbe23e3561, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3229,8 +3230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewCamera: {fileID: 2006180650}
   robot: {fileID: 1878082069}
-  grenade: {fileID: -716991774574899656, guid: b0e9445a690b85846b1dd8cd6c793d28, type: 3}
-  bullet: {fileID: -7603444813830743608, guid: 6d58357bbb1b79147b238b05bca33271, type: 3}
 --- !u!1 &2079714889
 GameObject:
   m_ObjectHideFlags: 0

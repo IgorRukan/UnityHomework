@@ -147,6 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootForce: 30
-  speed: 15
   bounceTime: 0
   bounceTimeLength: 5

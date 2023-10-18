@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Robot : MonoBehaviour
@@ -13,7 +14,8 @@ public class Robot : MonoBehaviour
 
     public GameObject[] bullet;
     public Projectile[] projectile;
-    
+    public MonoBehaviour[] bullets;
+
     public int current = 0;
     
     public Transform spawnBullet;
